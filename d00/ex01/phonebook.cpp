@@ -12,6 +12,7 @@ void	add_contact_info(Contacts *contacts)
 		contacts->addContact();
 }
 
+
 void	search_contact(Contacts *contacts)
 {
 	string	input;
