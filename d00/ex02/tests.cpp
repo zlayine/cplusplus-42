@@ -6,12 +6,10 @@
 //                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
 //                                                                            //
 // ************************************************************************** //
-
 #include <vector>
 #include <algorithm>
 #include <functional>
 #include "Account.class.cpp"
-
 
 int		main( void ) {
 
