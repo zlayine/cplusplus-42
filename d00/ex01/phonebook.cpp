@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "contact.class.cpp"
-#include "contacts.class.cpp"
+#include "Contact.class.cpp"
+#include "Contacts.class.cpp"
 
 
 void	add_contact_info(Contacts *contacts)
