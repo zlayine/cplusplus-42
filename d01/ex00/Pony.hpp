@@ -1,3 +1,6 @@
+#ifndef PONY_H
+# define PONY_H
+
 #include <iostream>
 #include <string>
 
@@ -10,3 +13,4 @@ public:
 	~Pony();
 };
 
+#endif

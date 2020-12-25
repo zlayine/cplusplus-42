@@ -2,8 +2,8 @@
 class ZombieHorde
 {
 private:
-	std::list<Zombie*> _zombies;
-	std::list<Zombie*>::iterator it;
+	Zombie 		*_zombies;
+	int			_n;
 
 public:
 	ZombieHorde(int n);

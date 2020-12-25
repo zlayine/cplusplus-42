@@ -10,6 +10,11 @@ Zombie::Zombie(std::string name, std::string type) : name(name), type(type) {
 	
 }
 
+Zombie::Zombie()
+{
+	name = 
+}
+
 Zombie::~Zombie()
 {
 }

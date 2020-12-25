@@ -1,9 +1,6 @@
 #include <ctime> 
 #include <string>
 #include <iostream>
-#include "Account.class.hpp"
-
-using namespace std;
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -90,7 +87,7 @@ void			Account::displayStatus(void) const {
 	std::cout << " index:" << this->_accountIndex << ";amount:" << this->_amount  << ";deposits:" << this->_nbDeposits << ";withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
-string			expand_date(int date) {
+std::string			expand_date(int date) {
 
 	if (date < 10)
 		std::cout << "0";

@@ -12,6 +12,7 @@ public:
 	std::string	type;
 
 	Zombie(std::string name, std::string type);
+	Zombie();
 	~Zombie();
 
 	void	announce();

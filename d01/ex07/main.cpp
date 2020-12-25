@@ -20,6 +20,21 @@ void	replace(std::string &word, std::string target, std::string replacement){
 	}
 }
 
+char	*to_upper(std::string *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] > 96 && str[i] < 123)
+			str[i] = str[i] - 32;
+		i++;
+	}
+	return (str);
+}
+
+
 int main(int argc, char **argv)
 {
 	std::ifstream	ifs;
@@ -38,7 +53,6 @@ int main(int argc, char **argv)
 	while (std::getline(ifs, buff))
 	{
 		replace(buff, argv[2], argv[3]);
-		std::cout << buff << "\n";
 		ofs << buff << std::endl;
 	}
 	ifs.close();

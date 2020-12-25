@@ -2,8 +2,8 @@ class Fixed
 {
 
 private:
-    int                 fpnt;
-    static int const    fbits = 8;
+    int                 _fpnt;
+    static int const    _fbits = 8;
 public:
     Fixed(void);
     Fixed(int const val);

@@ -1,4 +1,4 @@
-#include "Pony.cpp"
+#include "Pony.hpp"
 
 void	ponyOnTheHeap(void) {
 	Pony *pony = new Pony("On the heap");
@@ -14,4 +14,5 @@ int		main(void)
 {
 	ponyOnTheHeap();
 	ponyOnTheStack();
+	return (0);
 }

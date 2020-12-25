@@ -1,10 +1,9 @@
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
+#include <iostream>
 #include <string>
 
 class Zombie {
-
-private:
-	
-	Zombie	*_self;
 
 public:
 
@@ -17,3 +16,4 @@ public:
 	void	announce();
 };
 
+#endif

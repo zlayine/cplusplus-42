@@ -1,9 +1,7 @@
-#include <iostream>
-#include <string>
-#include "Zombie.cpp"
-#include "ZombieEvent.cpp"
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
-int main()
+int main(void)
 {
 	Zombie *z1;
 	Zombie *z2;

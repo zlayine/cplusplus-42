@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "Zombie.hpp"
 
 void	Zombie::announce()
@@ -12,4 +13,5 @@ Zombie::Zombie(std::string name, std::string type) : name(name), type(type) {
 
 Zombie::~Zombie()
 {
+	
 }

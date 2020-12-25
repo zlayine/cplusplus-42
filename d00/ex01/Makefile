@@ -11,7 +11,7 @@ HEADERS = contacts.class.hpp \
 all: $(NAME)
 
 $(NAME): $(SRCS) $(HEADERS) $(MAIN)
-	@g++ -Wall -Wextra -Werror $(MAIN) -o $(NAME)
+	@g++ -Wall -Wextra -Werror $(MAIN) $(SRCS) -o $(NAME)
 	@echo "PHONEBOOK IS READY!"
 
 clean:

@@ -21,6 +21,5 @@ void	Human::intimidatingShout(std::string const & target)
 void	Human::action(std::string const & action_name, std::string const & target)
 {
 	HumanFunc funcs[] = { &Human::meleeAttack, &Human::rangedAttack, &Human::intimidatingShout};
-
 	
 }

@@ -1,3 +1,5 @@
+#ifndef ZOMBIE_EVENT_H
+# define ZOMBIE_EVENT_H
 
 class ZombieEvent {
 
@@ -15,3 +17,5 @@ public:
 
 	Zombie	*randomChump(void);
 };
+
+#endif
