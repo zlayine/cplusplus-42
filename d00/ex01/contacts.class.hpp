@@ -3,23 +3,27 @@
 
 class Contacts {
 
+private:
+	Contact	_contacts[8];
+	int		_current;
+
+	Contact	*getContact(int index);
+
 public:
-	Contact	contacts[8];
-	int		current;
+	
 
 	Contacts(void);
 	~Contacts(void);
 
-	Contact	*getContact(int index);
 
 	void	addContact(void);
 
 	void	displayContacts(void);
 
+	void	searchContact(std::string input);
 
-	void	searchContact(string input);
+	int		getCurrent(void);
 
 };
-
 
 #endif

@@ -1,12 +1,9 @@
-#include <iostream>
-#include <string>
-#include "Contact.class.hpp"
+#include <sstream>
+#include <iomanip>
 #include "Contacts.class.hpp"
 
-using namespace std;
-
 Contacts::Contacts(void) {
-	current = 0;
+	this->_current = 0;
 	return;
 }
 
@@ -18,10 +15,10 @@ Contact	*Contacts::getContact(int index) {
 	int 	i;
 
 	i = 0;
-	while (i < current)
+	while (i < this->_current)
 	{
-		if (contacts[i].index == index)
-			return &contacts[i];
+		if (_contacts[i].getIndex() == index)
+			return &_contacts[i];
 		i++;
 	}
 	return NULL;
@@ -29,36 +26,48 @@ Contact	*Contacts::getContact(int index) {
 
 void	Contacts::addContact(void) {
 	Contact	contact;
+	std::string	buff;
 
-	contact.index = current;
+	contact.setIndex(this->_current);
 	std::cout << "First name: ";
-	std::cin >> contact.firstname;
+	std::cin >> buff;
+	contact.setFirstName(buff);
 	std::cout << "Last name: ";
-	std::cin >> contact.lastname;
+	std::cin >> buff;
+	contact.setLastName(buff);
 	std::cout << "Nick name: ";
-	std::cin >> contact.nickname;
+	std::cin >> buff;
+	contact.setNickName(buff);
 	std::cout << "Login: ";
-	std::cin >> contact.login;
-	std::cout << "Postal address: ";
-	std::cin >> contact.postal_address;
-	std::cout << "Email address: ";
-	std::cin >> contact.email_address;
+	std::cin >> buff;
+	contact.setLogin(buff);
+	std::cout << "Postal addrebuff: ";
+	std::cin >> buff;
+	contact.setPostalAddress(buff);
+	std::cout << "Email addrebuff: ";
+	std::cin >> buff;
+	contact.setEmailAddress(buff);
 	std::cout << "Phone number: ";
-	std::cin >> contact.phone_number;
+	std::cin >> buff;
+	contact.setPhoneNumber(buff);
 	std::cout << "Birthday date: ";
-	std::cin >> contact.birthday_date;
+	std::cin >> buff;
+	contact.setBirthdayDate(buff);
 	std::cout << "Favorite meal: ";
-	std::cin >> contact.favorite_meal;
+	std::cin >> buff;
+	contact.setFavoriteMeal(buff);
 	std::cout << "Underwear color: ";
-	std::cin >> contact.underwear_color;
+	std::cin >> buff;
+	contact.setUnderwearColor(buff);
 	std::cout << "Darkest secret: ";
-	std::cin >> contact.darkest_secret;
-	contacts[current] = contact;
-	current++;
+	std::cin >> buff;
+	contact.setDarkestSecret(buff);
+	this->_contacts[this->_current] = contact;
+	this->_current++;
 	std::cout << "Contact added" << std::endl;
 }
 
-void	limit_str(string str, int end) {
+void	limit_str(std::string str, int end) {
 	int		size;
 
 	size = str.length();
@@ -66,10 +75,8 @@ void	limit_str(string str, int end) {
 		std::cout << str.substr(0, 9) << ".";
 	else
 	{
-		size = 10 - size;
+		std::cout << std::setw(10);
 		std::cout << str;
-		while (size--)
-			std::cout << " ";
 	}
 	if (!end)
 		std::cout << "|";
@@ -80,24 +87,24 @@ void	limit_str(string str, int end) {
 void	Contacts::displayContacts(void) {
 	Contact	c;
 	int		i;
-
-	std::cout << "  index   |first name|last name | nickname " << std::endl;
+	std::setw(10);
+	std::cout << "index     |first name|last name |nickname  " << std::endl;
 	std::cout << "----------|----------|----------|----------" << std::endl;
 	i = -1;
-	while (++i < current)
+	while (++i < this->_current)
 	{
-		c = contacts[i];
-		std::cout << c.index << "         |"; 
-		limit_str(c.firstname, 0);
-		limit_str(c.lastname, 0);
-		limit_str(c.nickname, 1);
+		c = this->_contacts[i];
+		std::cout << std::setw(10);
+		std::cout << c.getIndex() << "|"; 
+		limit_str(c.getFirstName(), 0);
+		limit_str(c.getLastName(), 0);
+		limit_str(c.getNickName(), 1);
 	}
 }
 
-void	Contacts::searchContact(string input) {
-	int	i;
+void	Contacts::searchContact(std::string input) {
+	int		i;
 	Contact	*contact;
-	char	buff[512];
 
 	i = 0;
 	while (input[i])
@@ -107,13 +114,16 @@ void	Contacts::searchContact(string input) {
 			std::cout << "Error: Index not valid" << std::endl;
 			return;
 		}
-		buff[i] = input[i];
 		i++;
 	}
-	buff[i] = '\0';
-	contact = getContact(atoi(buff));
+	contact = this->getContact(std::stoi(input));
 	if (contact)
 		contact->displayContact();
 	else
 		std::cout << "Error: Contact not found!" << std::endl;
 } 
+
+int		Contacts::getCurrent(void)
+{
+	return (this->_current);
+}

@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-using namespace std;
 #include "Contact.class.hpp"
 
 Contact::Contact(void) {
@@ -12,132 +9,124 @@ Contact::~Contact(void) {
 }
 
 void	Contact::displayContact(void) {
-	std::cout << "First name: " << firstname << std::endl;
-	std::cout << "Last name: " << lastname << std::endl;
-	std::cout << "Nick name: " << nickname << std::endl;
-	std::cout << "Login: " << login << std::endl;
-	std::cout << "Postal address: " << postal_address << std::endl;
-	std::cout << "Email address: " << email_address << std::endl;
-	std::cout << "Phone number: " << phone_number << std::endl;
-	std::cout << "Birthday date: " << birthday_date << std::endl;
-	std::cout << "Favorite meal: " << favorite_meal << std::endl;
-	std::cout << "Underwear color: " << underwear_color << std::endl;
-	std::cout << "Darkest secret: " << darkest_secret << std::endl;
+	std::cout << "First name: " << this->_firstname << std::endl;
+	std::cout << "Last name: " << this->_lastname << std::endl;
+	std::cout << "Nick name: " << this->_nickname << std::endl;
+	std::cout << "Login: " << this->_login << std::endl;
+	std::cout << "Postal address: " << this->_postal_address << std::endl;
+	std::cout << "Email address: " << this->_email_address << std::endl;
+	std::cout << "Phone number: " << this->_phone_number << std::endl;
+	std::cout << "Birthday date: " << this->_birthday_date << std::endl;
+	std::cout << "Favorite meal: " << this->_favorite_meal << std::endl;
+	std::cout << "Underwear color: " << this->_underwear_color << std::endl;
+	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
 }
 
-// void	Contact::setIndex(int index) {
-// 	this->index = index;
-// 	return ;
-// }
+void	Contact::setIndex(int index) {
+	this->_index = index;
+	return ;
+}
 
-// int		Contact::getIndex(void) {
-// 	return this->index;
-// }
+int		Contact::getIndex(void) const {
+	return this->_index;
+}
 
-// void	Contact::setFirstName(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setFirstName(std::string str) {
+	this->_firstname = str;
+	return ;
+}
 
-// char	*Contact::getFirstName(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getFirstName(void) const {
+	return this->_firstname;
+}
 
-// void	Contact::setLastName(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setLastName(std::string str) {
+	this->_lastname = str;
+	return ;
+}
 
-// char	*Contact::getLastName(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getLastName(void) const {
+	return this->_lastname;
+}
 
-// void	Contact::setNickName(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setNickName(std::string str) {
+	this->_nickname = str;
+	return ;
+}
 
-// char	*Contact::getNickName(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getNickName(void) const {
+	return this->_nickname;
+}
 
-// void	Contact::setLogin(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setLogin(std::string str) {
+	this->_login = str;
+	return ;
+}
 
-// char	*Contact::getLogin(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getLogin(void) const {
+	return this->_login;
+}
 
-// void	Contact::setPostalAddress(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setPostalAddress(std::string str) {
+	this->_postal_address = str;
+	return ;
+}
 
-// char	*Contact::getPostalAddress(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getPostalAddress(void) const {
+	return this->_postal_address;
+}
 
-// void	Contact::setEmailAddress(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setEmailAddress(std::string str) {
+	this->_email_address = str;
+	return ;
+}
 
-// char	*Contact::getEmailAddress(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getEmailAddress(void) const {
+	return this->_email_address;
+}
+#include "Contact.class.hpp"
 
-// void	Contact::setPhoneNumber(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setPhoneNumber(std::string str) {
+	this->_phone_number = str;
+	return ;
+}
 
-// char	*Contact::getPhoneNumber(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getPhoneNumber(void) const {
+	return this->_phone_number;
+}
 
-// void	Contact::setBirthdayDate(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setBirthdayDate(std::string str) {
+	this->_birthday_date = str;
+	return ;
+}
 
-// char	*Contact::getBirthdayDate(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getBirthdayDate(void) const {
+	return this->_birthday_date;
+}
 
-// void	Contact::setFavoriteMeal(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setFavoriteMeal(std::string str) {
+	this->_favorite_meal = str;
+	return ;
+}
 
-// char	*Contact::getFavoriteMeal(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getFavoriteMeal(void) const {
+	return this->_favorite_meal;
+}
 
-// void	Contact::setUnderwearColor(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setUnderwearColor(std::string str) {
+	this->_underwear_color = str;
+	return ;
+}
 
-// char	*Contact::getFirstName(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getUnderWearColor(void) const {
+	return this->_underwear_color;
+}
 
-// void	Contact::setFirstName(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
+void	Contact::setDarkestSecret(std::string str) {
+	this->_darkest_secret = str;
+	return ;
+}
 
-// char	*Contact::getFirstName(void) {
-// 	return this->firstname;
-// }
-
-// void	Contact::setFirstName(char *str) {
-// 	this->firstname = str;
-// 	return ;
-// }
-
-// char	*Contact::getFirstName(void) {
-// 	return this->firstname;
-// }
+std::string	Contact::getDarkestSecret(void) const {
+	return this->_darkest_secret;
+}

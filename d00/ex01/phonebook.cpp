@@ -3,19 +3,17 @@
 #include "Contact.class.cpp"
 #include "Contacts.class.cpp"
 
-
 void	add_contact_info(Contacts *contacts)
 {
-	if (contacts->current == 8)
+	if (contacts->getCurrent() == 8)
 		std::cout << "Error: You have reached the contacts limit" << std::endl;
 	else
 		contacts->addContact();
 }
 
-
 void	search_contact(Contacts *contacts)
 {
-	string	input;
+	std::string	input;
 
 	contacts->displayContacts();
 	std::cout << "Who you want to search for ? :";
@@ -23,7 +21,7 @@ void	search_contact(Contacts *contacts)
 	contacts->searchContact(input);
 }
 
-int		verify_command(string command, Contacts *contacts)
+int		verify_command(std::string command, Contacts *contacts)
 {
 	if (command.compare("ADD") == 0)
 	{
@@ -48,7 +46,7 @@ int		main()
 {
 	int			end;
 	Contacts	contacts;
-	string		buff;
+	std::string		buff;
 
 	end = 0;
 	while (end == 0)
