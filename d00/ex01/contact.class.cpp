@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "contact.class.hpp"
+#include "Contact.class.hpp"
 
 Contact::Contact(void) {
 	return ;

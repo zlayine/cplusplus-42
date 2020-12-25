@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
-#include "contact.class.hpp"
-#include "contacts.class.hpp"
+#include "Contact.class.hpp"
+#include "Contacts.class.hpp"
 
 using namespace std;
 
