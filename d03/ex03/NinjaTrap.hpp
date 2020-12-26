@@ -1,12 +1,12 @@
-#ifndef NinjaTrap_H
-# define NinjaTrap_H
+#ifndef NINJATRAP_H
+# define NINJATRAP_H
 
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 class NinjaTrap : public ClapTrap
 {
-private:
-
 public:
 	NinjaTrap();
     NinjaTrap(std::string name);
@@ -14,12 +14,9 @@ public:
 
 	unsigned int		rangedAttack(std::string const & target);
 	unsigned int		meleeAttack(std::string const & target);
-	void				takeDamage(unsigned int amount);
-	void				beRepaired(unsigned int amount);
-
-	void				ninjaShoebox();
-
-	std::string			getName() const;
+	void				ninjaShoebox(FragTrap const & target);
+	void				ninjaShoebox(ScavTrap const & target);
+	void				ninjaShoebox(NinjaTrap const & target);
 
 };
 

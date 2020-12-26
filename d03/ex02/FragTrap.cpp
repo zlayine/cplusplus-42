@@ -87,25 +87,6 @@ unsigned int	FragTrap::_gasAttack(std::string const & target)
 	return this->_gas_attack_dmg;
 }
 
-
-// void	FragTrap::takeDamage(unsigned int amount)
-// {
-// 	if (amount - this->_armor_reduction > this->_hitp)
-// 		this->_hitp = 0;
-// 	else if (amount > 0)
-// 		this->_hitp -= (amount - this->_armor_reduction);
-// 	std::cout << this->_name << ": Woah! Oh! Jeez!" << std::endl;
-// }
-
-// void	FragTrap::beRepaired(unsigned int amount)
-// {
-// 	if (amount > this->_mhitp)
-// 		this->_hitp = 100;
-// 	else
-// 		this->_hitp += amount;
-// 	std::cout << this->_name << ": Sweet life juice!" << std::endl;
-// }
-
 unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
 	FragPTR	ptrs[5] = { &FragTrap::meleeAttack, 
@@ -124,7 +105,3 @@ unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	std::cout << this->_name << ": Dangit, I'm out of energy!" << std::endl;
 	return 0;
 }
-
-// std::string	FragTrap::getName() const{
-// 	return this->_name;
-// }

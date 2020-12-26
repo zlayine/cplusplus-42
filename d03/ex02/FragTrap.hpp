@@ -22,12 +22,7 @@ public:
 
 	unsigned int		rangedAttack(std::string const & target);
 	unsigned int		meleeAttack(std::string const & target);
-	// void				takeDamage(unsigned int amount);
-	// void				beRepaired(unsigned int amount);
-
 	unsigned int		vaulthunter_dot_exe(std::string const & target);
-
-	// std::string			getName() const;
 
 };
 

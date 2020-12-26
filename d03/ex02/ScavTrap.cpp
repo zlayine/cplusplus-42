@@ -5,7 +5,7 @@ ScavTrap::ScavTrap()
 	std::cout << "Knock Knock, mini-trap is here!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap()
 {
 	this->_name = name;
 	this->_hitp = 100;
@@ -48,24 +48,6 @@ unsigned int	ScavTrap::meleeAttack(std::string const & target)
 	return this->_melee_attack_dmg;
 }
 
-// void	ScavTrap::takeDamage(unsigned int amount)
-// {
-// 	if (amount - this->_armor_reduction > this->_hitp)
-// 		this->_hitp = 0;
-// 	else if (amount > 0)
-// 		this->_hitp -= (amount - this->_armor_reduction);
-// 	std::cout << this->_name << ": Woah! Oh! Jeez!" << std::endl;
-// }
-
-// void	ScavTrap::beRepaired(unsigned int amount)
-// {
-// 	if (amount > this->_mhitp)
-// 		this->_hitp = 100;
-// 	else
-// 		this->_hitp += amount;
-// 	std::cout << this->_name << ": Sweet life juice!" << std::endl;
-// }
-
 void	ScavTrap::_raceChallenge(std::string const & target)
 {
 	std::cout << "FR4G-TP "
@@ -103,10 +85,13 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 		&ScavTrap::_fuelChallenge,
 		&ScavTrap::_raceChallenge};
 
-	r = rand() % 3;
-	(this->*ptrs[r])(target);
+	if (this->_energyp >= 25)
+	{
+		this->_energyp -= 25;
+		std::cout << this->_name << ": Behind you little frag!" << std::endl;
+		r = rand() % 3;
+		(this->*ptrs[r])(target);
+	}
+	else
+		std::cout << this->_name << ": Dangit, I'm out of energy!" << std::endl;
 }
-
-// std::string	ScavTrap::getName() const{
-// 	return this->_name;
-// }

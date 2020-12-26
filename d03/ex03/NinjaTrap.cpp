@@ -2,7 +2,7 @@
 
 NinjaTrap::NinjaTrap()
 {
-
+	std::cout << "Hey, watch out!, mini-trap is here!" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap()
@@ -16,12 +16,12 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap()
 	this->_melee_attack_dmg = 60;
 	this->_range_attack_dmg = 5;
 	this->_armor_reduction = 0;
-	std::cout << "Constructor Called" << std::endl;
+	std::cout << "Hey, watch out!, " << name << " is here!" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap()
 {
-	std::cout << "Deconstructor Called" << std::endl;
+	std::cout << this->_name <<  ": No, nononono NO!" << std::endl;
 }
 
 unsigned int	NinjaTrap::rangedAttack(std::string const & target)
@@ -48,6 +48,38 @@ unsigned int	NinjaTrap::meleeAttack(std::string const & target)
 	return this->_melee_attack_dmg;
 }
 
-std::string	NinjaTrap::getName() const{
-	return this->_name;
+void				NinjaTrap::ninjaShoebox(FragTrap const & target)
+{
+	if (this->_energyp >= 25)
+	{
+		this->_energyp -= 25;
+		std::cout << this->_name << ": Behind you little frag!" << std::endl;
+		std::cout << target.getName() << ": Whaaat!! Where" << std::endl;
+	}
+	else
+		std::cout << this->_name << ": Dangit, I'm out of energy!" << std::endl;
+}
+
+void				NinjaTrap::ninjaShoebox(ScavTrap const & target)
+{
+	if (this->_energyp >= 25)
+	{
+		this->_energyp -= 25;
+		std::cout << this->_name << ": Look you dropped something!" << std::endl;
+		std::cout << target.getName() << ": Whaaat!! Where" << std::endl;
+	}
+	else
+		std::cout << this->_name << ": Dangit, I'm out of energy!" << std::endl;
+}
+
+void				NinjaTrap::ninjaShoebox(NinjaTrap const & target)
+{
+	if (this->_energyp >= 25)
+	{
+		this->_energyp -= 25;
+		std::cout << this->_name << ": So you can climb this wall Ha ?! >:)" << std::endl;
+		std::cout << target.getName() << ": I bet i can! >:(" << std::endl;
+	}
+	else
+		std::cout << this->_name << ": Dangit, I'm out of energy!" << std::endl;
 }

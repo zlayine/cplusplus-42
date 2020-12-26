@@ -103,8 +103,15 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 		&ScavTrap::_fuelChallenge,
 		&ScavTrap::_raceChallenge};
 
-	r = rand() % 3;
-	(this->*ptrs[r])(target);
+	if (this->_energyp >= 25)
+	{
+		this->_energyp -= 25;
+		std::cout << this->_name << ": Behind you little frag!" << std::endl;
+		r = rand() % 3;
+		(this->*ptrs[r])(target);
+	}
+	else
+		std::cout << this->_name << ": Dangit, I'm out of energy!" << std::endl;
 }
 
 std::string	ScavTrap::getName() const{
