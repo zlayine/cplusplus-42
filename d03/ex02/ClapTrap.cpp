@@ -2,17 +2,12 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Super Constructor Called" << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name)
-{
-	std::cout << "Super Constructor Called" << std::endl;
+	std::cout << "Super ClapBody Created" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Deconstructor Called" << std::endl;
+	std::cout << "Super ClapBody Demolished" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -21,8 +16,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		this->_hitp = 0;
 	else if (amount > 0)
 		this->_hitp -= (amount - this->_armor_reduction);
-	else
-		std::cout << "Negatif damage" << std::endl;
+	std::cout << this->_name << ": Woah! Oh! Jeez!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -31,6 +25,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_hitp = 100;
 	else
 		this->_hitp += amount;
+	std::cout << this->_name << ": Sweet life juice!" << std::endl;
 }
 
 std::string	ClapTrap::getName() const{

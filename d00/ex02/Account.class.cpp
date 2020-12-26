@@ -1,6 +1,7 @@
 #include <ctime> 
 #include <string>
 #include <iostream>
+#include "Account.class.hpp"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;

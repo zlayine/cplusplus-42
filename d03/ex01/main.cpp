@@ -17,7 +17,5 @@ int main()
 	s1.challengeNewcomer(f1.getName());
 	s1.challengeNewcomer(f1.getName());
 
-	
-
 	return 0;
 }

@@ -99,10 +99,11 @@ void	ScavTrap::_fuelChallenge(std::string const & target)
 void	ScavTrap::challengeNewcomer(std::string const & target)
 {
 	int 	r;
-	PTR		ptrs[3] = { &ScavTrap::_pushupsChallenge, 
+	ScavPTR	ptrs[3] = { &ScavTrap::_pushupsChallenge, 
 		&ScavTrap::_fuelChallenge,
 		&ScavTrap::_raceChallenge};
 
+	r = rand() % 3;
 	(this->*ptrs[r])(target);
 }
 

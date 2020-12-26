@@ -107,7 +107,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 
 unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
-	PTR		ptrs[5] = { &FragTrap::meleeAttack, 
+	FragPTR	ptrs[5] = { &FragTrap::meleeAttack, 
 		&FragTrap::rangedAttack,
 		&FragTrap::_kickAttack,
 		&FragTrap::_lookAwayAttack,

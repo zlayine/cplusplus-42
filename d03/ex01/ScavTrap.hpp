@@ -7,11 +7,11 @@
 class ScavTrap
 {
 private:
-	int				_hitp;
-	int				_mhitp;
-	int				_energyp;
-	int				_menergyp;
-	int				_level;
+	unsigned int	_hitp;
+	unsigned int	_mhitp;
+	unsigned int	_energyp;
+	unsigned int	_menergyp;
+	unsigned int	_level;
 	std::string		_name;
 	unsigned int	_melee_attack_dmg;
 	unsigned int	_range_attack_dmg;
@@ -37,6 +37,6 @@ public:
 
 };
 
-typedef void 	(ScavTrap::*PTR) (std::string const &);
+typedef void 	(ScavTrap::*ScavPTR) (std::string const &);
 
 #endif
