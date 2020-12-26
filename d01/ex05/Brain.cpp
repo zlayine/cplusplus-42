@@ -1,5 +1,3 @@
-#include <sstream>
-#include <string>
 #include "Brain.hpp"
 
 Brain::Brain()

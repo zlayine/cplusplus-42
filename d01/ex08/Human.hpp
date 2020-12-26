@@ -1,3 +1,7 @@
+#ifndef HUMANA_H
+# define HUMANA_H
+
+#include <iostream>
 #include <string>
 
 class Human
@@ -9,3 +13,7 @@ private:
 public:
 	void action(std::string const & action_name, std::string const & target);
 };
+
+
+
+#endif

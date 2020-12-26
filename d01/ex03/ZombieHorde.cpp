@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-#include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
 ZombieHorde::ZombieHorde(int n)

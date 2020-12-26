@@ -2,10 +2,9 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include <algorithm>
 
-void	replace(std::string &word, std::string target, std::string replacement){
-	int	start_pos;
+void	ft_replace(std::string &word, std::string target, std::string replacement){
+	size_t	start_pos;
 
 	start_pos = 0;
 	while (start_pos < word.length())
@@ -20,20 +19,16 @@ void	replace(std::string &word, std::string target, std::string replacement){
 	}
 }
 
-char	*to_upper(std::string *str)
+std::string	to_upper(std::string str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (str[i] > 96 && str[i] < 123)
-			str[i] = str[i] - 32;
-		i++;
+	for(i = 0; i < str.length(); ++i) {
+		str[i] = toupper(str[i]);
 	}
 	return (str);
 }
-
 
 int main(int argc, char **argv)
 {
@@ -48,12 +43,15 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	ifs.open(argv[1]);
-	ss << argv[1] << ".replace";
+	ss << to_upper(argv[1]) << ".replace";
 	ofs.open(ss.str());
 	while (std::getline(ifs, buff))
 	{
-		replace(buff, argv[2], argv[3]);
-		ofs << buff << std::endl;
+		ft_replace(buff, argv[2], argv[3]);
+		if (!ifs.eof())
+			ofs << buff << std::endl;
+		else
+			ofs << buff;
 	}
 	ifs.close();
 	ofs.close();

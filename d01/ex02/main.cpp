@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-#include "Zombie.hpp"
 #include "ZombieEvent.hpp"
 
 int main(void)

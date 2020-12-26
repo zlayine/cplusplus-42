@@ -1,8 +1,5 @@
-#include <iostream>
-#include <string>
 #include "Human.hpp"
 
-//must be redone ?
 int main(void)
 {
 	Human bob;

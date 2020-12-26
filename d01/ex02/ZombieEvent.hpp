@@ -1,6 +1,8 @@
 #ifndef ZOMBIE_EVENT_H
 # define ZOMBIE_EVENT_H
 
+#include "Zombie.hpp"
+
 class ZombieEvent {
 
 private:
