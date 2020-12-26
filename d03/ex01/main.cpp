@@ -1,4 +1,5 @@
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 // output must be checked again
 int main()
