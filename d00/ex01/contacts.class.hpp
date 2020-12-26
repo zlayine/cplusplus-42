@@ -1,6 +1,8 @@
 #ifndef CONTACTS_CLASS_H
 # define CONTACTS_CLASS_H
 
+#include "Contact.class.hpp"
+
 class Contacts {
 
 private:

@@ -3,20 +3,28 @@
 Fixed::Fixed()
 {
     std::cout << "Default constructor called" << std::endl;
+    this->_isfloat = 0;
     this->_fpnt = 0;
+}
+
+Fixed::Fixed(Fixed const & src)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    *this = src;
 }
 
 Fixed::Fixed(int const val)
 {
     std::cout << "Int constructor called" << std::endl;
-    // setRawBits(val);
+    this->_isfloat = 0;
+    this->_fpnt = val * (1 << this->_fbits);
 }
 
 Fixed::Fixed(float const val)
 {
     std::cout << "Float constructor called" << std::endl;
-    // *this = src;
-    // this->_fpnt = 
+    this->_isfloat = 1;
+    this->_fpnt = roundf(val * (1 << this->_fbits));
 }
 
 Fixed::~Fixed()
@@ -28,14 +36,40 @@ Fixed & Fixed::operator=(Fixed const & rhs)
 {
     std::cout << "Assignation operator called" << std::endl;
 
-    this->setRawBits(rhs.getRawBits());
+    this->setFixedPoint(rhs.getFixedPoint());
+    this->_isfloat = rhs.isFloat();
     return *this;
+}
+
+std::ostream &  operator<<(std::ostream & o, Fixed const & rhs)
+{
+    if (!rhs.isFloat())
+        o << rhs.getRawBits();
+    else
+        o << rhs.toFloat();
+    return o;
+}
+
+bool    Fixed::isFloat() const
+{
+    if (this->_isfloat)
+        return true;
+    return false;
+}
+
+int     Fixed::getFixedPoint() const
+{
+    return this->_fpnt;
+}
+
+void    Fixed::setFixedPoint(int fpnt)
+{
+    this->_fpnt = fpnt;
 }
 
 int     Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function called" << std::endl;
-    return (this->_fpnt / (1 << this->_fbits));
+    return this->_fpnt / (1 << this->_fbits);
 }
 
 void    Fixed::setRawBits(int const raw)
@@ -48,7 +82,7 @@ int     Fixed::toInt(void) const
     return getRawBits();
 }
 
-int     Fixed::toFloat(void) const
+float    Fixed::toFloat(void) const
 {
-    return getRawBits();
+    return (float)this->_fpnt / (float)(1 << this->_fbits);
 }

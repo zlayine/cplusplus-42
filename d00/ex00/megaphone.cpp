@@ -1,15 +1,13 @@
 #include <iostream>
+#include <string>
 
-char	*to_upper(char *str)
+std::string	to_upper(std::string str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (str[i] > 96 && str[i] < 123)
-			str[i] = str[i] - 32;
-		i++;
+	for(i = 0; i < str.length(); ++i) {
+		str[i] = toupper(str[i]);
 	}
 	return (str);
 }
@@ -24,7 +22,7 @@ int		main(int argc, char **argv)
 	else
 	{
 		while (argv[++i])
-			std::cout << to_upper(argv[i]) << " ";
+			std::cout << to_upper(std::string(argv[i])) << " ";
 		std::cout << std::endl;
 	}
 	return (0);

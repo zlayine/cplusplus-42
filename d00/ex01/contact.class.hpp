@@ -1,6 +1,11 @@
 #ifndef CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
+#include <sstream>
+#include <iomanip>
+#include <iostream>
+#include <string>
+
 class Contact {
 
 private:

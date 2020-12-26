@@ -1,5 +1,5 @@
-#ifndef HUMANA_H
-# define HUMANA_H
+#ifndef HUMAN_H
+# define HUMAN_H
 
 #include <iostream>
 #include <string>
@@ -13,7 +13,5 @@ private:
 public:
 	void action(std::string const & action_name, std::string const & target);
 };
-
-
 
 #endif

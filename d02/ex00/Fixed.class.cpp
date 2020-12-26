@@ -3,13 +3,12 @@
 Fixed::Fixed()
 {
     std::cout << "Default constructor called" << std::endl;
-    this->fpnt = 0;
+    this->_fpnt = 0;
 }
 
 Fixed::Fixed(Fixed const & src)
 {
     std::cout << "Copy constructor called" << std::endl;
-
     *this = src;
 }
 
@@ -29,10 +28,10 @@ Fixed & Fixed::operator=(Fixed const & rhs)
 int     Fixed::getRawBits() const
 {
     std::cout << "getRawBits member function called" << std::endl;
-    return (this->fpnt / this->fbits);
+    return this->_fpnt / (1 << this->_fbits);
 }
 
 void    Fixed::setRawBits(int const raw)
 {
-    this->fpnt = raw;
+    this->_fpnt = raw * (1 << this->_fbits);
 }

@@ -1,5 +1,4 @@
-#include <sstream>
-#include <iomanip>
+
 #include "Contacts.class.hpp"
 
 Contacts::Contacts(void) {

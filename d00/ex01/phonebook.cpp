@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-#include "Contact.class.hpp"
 #include "Contacts.class.hpp"
 
 void	add_contact_info(Contacts *contacts)
