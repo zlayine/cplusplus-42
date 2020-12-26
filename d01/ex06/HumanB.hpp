@@ -1,3 +1,6 @@
+#ifndef HUMANB_H
+# define HUMANB_H
+
 class HumanB
 {
 
@@ -9,9 +12,9 @@ public:
 	HumanB(std::string name);
 	~HumanB();
 
-	void	setWeapon(Weapon weapon);
+	void	setWeapon(Weapon& weapon);
 
 	void	attack();
 };
 
-
+#endif

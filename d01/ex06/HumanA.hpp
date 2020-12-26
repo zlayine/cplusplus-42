@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef HUMANA_H
+# define HUMANA_H
+
 class HumanA
 {
 
@@ -12,4 +14,4 @@ public:
 	void	attack();
 };
 
-
+#endif

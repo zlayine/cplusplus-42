@@ -1,10 +1,9 @@
 #include <string>
 #include <iostream>
-#include "Weapon.cpp"
-#include "HumanA.cpp"
-#include "HumanB.cpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-//output is not working good
 int main()
 {
 	{

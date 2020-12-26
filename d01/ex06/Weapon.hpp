@@ -1,3 +1,5 @@
+#ifndef WEAPON_H
+# define WEAPON_H
 
 class Weapon
 {
@@ -12,3 +14,4 @@ public:
 	std::string	getType(void);
 };
 
+#endif
