@@ -1,20 +1,21 @@
-#include <string>
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
 class Zombie {
 
 private:
-	
-	Zombie	*_self;
+	std::string	_name;
+	std::string	_type;
+
+	std::string	randomName();
 
 public:
 
-	std::string	name;
-	std::string	type;
-
-	Zombie(std::string name, std::string type);
 	Zombie();
+	Zombie(std::string name, std::string type);
 	~Zombie();
 
 	void	announce();
 };
 
+#endif

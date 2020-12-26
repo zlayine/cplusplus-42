@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Human.cpp"
+#include "Human.hpp"
 
 //must be redone ?
 int main(void)

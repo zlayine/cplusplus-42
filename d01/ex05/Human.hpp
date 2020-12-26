@@ -1,5 +1,6 @@
-#include <string>
-#include "Brain.cpp"
+#ifndef HUMAN_H
+# define HUMAN_H
+#include "Brain.hpp"
 
 class Human
 {
@@ -15,3 +16,5 @@ public:
 
 	std::string	identify(void);
 };
+
+#endif

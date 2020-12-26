@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
-#include <list>
-#include "Zombie.cpp"
-#include "ZombieHorde.cpp"
+#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
 int main()
 {

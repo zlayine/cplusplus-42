@@ -1,3 +1,5 @@
+#ifndef ZOMBIE_HORDE_H
+# define ZOMBIE_HORDE_H
 
 class ZombieHorde
 {
@@ -12,3 +14,4 @@ public:
 	void	announce(void);
 };
 
+#endif

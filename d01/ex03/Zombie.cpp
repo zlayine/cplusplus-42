@@ -1,18 +1,28 @@
 #include <iostream>
+#include <string>
 #include "Zombie.hpp"
 
 void	Zombie::announce()
 {
-	std::cout << "<" << name << " (" << type << ")> Braaaiiiinsss...." << std::endl;
+	std::cout << "<" << _name << " (" << _type << ")> Braaaiiiinsss...." << std::endl;
 }
 
-Zombie::Zombie(std::string name, std::string type) : name(name), type(type) {
+Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type) {
 	
+}
+
+std::string	Zombie::randomName() {
+	int			r;
+	std::string	names[5] = {"Toto", "Tata", "Titi", "Momo", "Koko"};
+
+    r = rand() % 5;
+	return (names[r]);
 }
 
 Zombie::Zombie()
 {
-	name = 
+	_name = this->randomName();
+	_type = this->randomName();
 }
 
 Zombie::~Zombie()

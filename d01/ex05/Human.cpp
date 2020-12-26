@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 #include "Human.hpp"
 
 Human::Human()

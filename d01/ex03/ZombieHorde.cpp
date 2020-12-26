@@ -1,3 +1,6 @@
+#include <iostream>
+#include <string>
+#include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
 ZombieHorde::ZombieHorde(int n)
@@ -8,7 +11,6 @@ ZombieHorde::ZombieHorde(int n)
 
 ZombieHorde::~ZombieHorde()
 {
-	delete this->_zombies;
 }
 
 void	ZombieHorde::announce(void)
@@ -18,7 +20,7 @@ void	ZombieHorde::announce(void)
 	i = 0;
 	while (i < this->_n)
 	{
-		this->_zombies[i]->announce();
+		_zombies[i].announce();
 		i++;
 	}
 }
