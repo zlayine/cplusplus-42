@@ -15,9 +15,17 @@ private:
 	std::string		_name;
 	unsigned int	_melee_attack_dmg;
 	unsigned int	_range_attack_dmg;
+	unsigned int	_kick_attack_dmg;
+	unsigned int	_lookaw_attack_dmg;
+	unsigned int	_gas_attack_dmg;
 	unsigned int	_armor_reduction;
 
+	unsigned int	_kickAttack(std::string const & target);
+	unsigned int	_lookAwayAttack(std::string const & target);
+	unsigned int	_gasAttack(std::string const & target);
+
 public:
+	FragTrap();
     FragTrap(std::string name);
     ~FragTrap();
 

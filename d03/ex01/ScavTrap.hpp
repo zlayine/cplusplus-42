@@ -17,6 +17,10 @@ private:
 	unsigned int	_range_attack_dmg;
 	unsigned int	_armor_reduction;
 
+	void			_raceChallenge(std::string const & target);
+	void			_pushupsChallenge(std::string const & target);
+	void			_fuelChallenge(std::string const & target);
+
 public:
     ScavTrap();
     ScavTrap(std::string name);
@@ -27,12 +31,12 @@ public:
 	void				takeDamage(unsigned int amount);
 	void				beRepaired(unsigned int amount);
 
-	void				challengeNewcomer();
+	void				challengeNewcomer(std::string const & target);
 
 	std::string			getName() const;
 
 };
 
-typedef unsigned int 	(ScavTrap::*PTR) (std::string const &);
+typedef void 	(ScavTrap::*PTR) (std::string const &);
 
 #endif
