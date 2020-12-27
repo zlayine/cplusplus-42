@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
+// coplien form not done
 int main()
 {
 	FragTrap	f1("robot");
