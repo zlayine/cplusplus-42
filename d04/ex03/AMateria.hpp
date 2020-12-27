@@ -1,6 +1,7 @@
 #ifndef AMATERIA_H
 # define AMATERIA_H
 
+class AMateria;
 #include "ICharacter.hpp"
 
 class AMateria
@@ -16,37 +17,7 @@ public:
 	std::string const & getType() const;
 	unsigned int getXP() const; 
 	virtual AMateria* clone() const = 0;
-	virtual void use(ICharacter& target);
+	virtual void use(ICharacter & target);
 };
-
-AMateria::AMateria()
-{
-
-}
-
-AMateria::AMateria(std::string const & type) : _type(type)
-{
-	_xp = 0;
-}
-
-AMateria::~AMateria()
-{
-
-}
-
-std::string const & AMateria::getType() const
-{
-
-}
-
-unsigned int AMateria::getXP() const
-{
-
-}
-
-void 		AMateria::use(ICharacter& target) 
-{
-	_xp += 10;
-}
 
 #endif
