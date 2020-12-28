@@ -17,8 +17,6 @@ void	Human::intimidatingShout(std::string const & target)
 	std::cout << "Intimidating Shout: " << target << std::endl;
 }
 
-typedef void(Human::*PTR) (std::string const &);
-
 void	Human::action(std::string const & action_name, std::string const & target)
 {
 	int i;

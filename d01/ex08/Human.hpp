@@ -14,4 +14,6 @@ public:
 	void action(std::string const & action_name, std::string const & target);
 };
 
+typedef void(Human::*PTR) (std::string const &);
+
 #endif
