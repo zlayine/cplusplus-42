@@ -51,8 +51,8 @@ std::ostream &  operator<<(std::ostream & o, Character const & src)
 {	
 	o << src.getName() << " has " << src.getAP();
 	if (src.getWeapon())
-		o << " AP and wields a " << src.getWeapon()->getName() << std::endl;
+		o << " AP and wields a " << src.getWeapon()->getName();
 	else
-		o << " AP and is unarmed" << std::endl;
+		o << " AP and is unarmed";
 	return o;
 }
