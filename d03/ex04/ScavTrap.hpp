@@ -11,6 +11,7 @@ private:
 	void			_fuelChallenge(std::string const & target);
 public:
 	ScavTrap();
+	ScavTrap(ScavTrap const & src);
     ScavTrap(std::string name);
     ~ScavTrap();
 

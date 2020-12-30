@@ -5,9 +5,8 @@ NinjaTrap::NinjaTrap()
 	std::cout << "Hey, watch out!, mini-trap is here!" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(std::string name) : ClapTrap()
+NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name;
 	this->_hitp = 60;
 	this->_mhitp = 60;
 	this->_energyp = 120;

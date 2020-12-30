@@ -5,9 +5,8 @@ ScavTrap::ScavTrap()
 	std::cout << "Knock Knock, mini-trap is here!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap()
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name;
 	this->_hitp = 100;
 	this->_mhitp = 100;
 	this->_energyp = 50;

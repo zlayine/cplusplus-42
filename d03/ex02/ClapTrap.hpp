@@ -19,7 +19,11 @@ protected:
 
 public:
 	ClapTrap();
+	ClapTrap(ClapTrap const & src);
+    ClapTrap(std::string name);
     ~ClapTrap();
+
+	ClapTrap & 			operator=(ClapTrap const & src);
 
 	unsigned int		rangedAttack(std::string const & target);
 	unsigned int		meleeAttack(std::string const & target);
@@ -27,6 +31,14 @@ public:
 	void				beRepaired(unsigned int amount);
 
 	std::string			getName() const;
+	unsigned int		getHitP() const;
+	unsigned int		getMaxHitP() const;
+	unsigned int		getEnergy() const;
+	unsigned int		getMaxEnergy() const;
+	unsigned int		getLevel() const;
+	unsigned int		getMeleeDmg() const;
+	unsigned int		getRangeDmg() const;
+	unsigned int		getArmorDmg() const;
 
 };
 

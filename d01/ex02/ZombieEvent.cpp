@@ -24,9 +24,10 @@ Zombie	*ZombieEvent::newZombie(std::string name)
 Zombie	*ZombieEvent::randomChump(void)
 {
     int			r;
-	std::string	names[5] = {"Toto", "Tata", "Titi", "Momo", "Koko"};
+	std::string	names[5] = {"Mandell", "Corn", "Simon", "Momo", "Lin"};
 	Zombie		*zombie;
 
+	srand(clock());
     r = rand() % 5;
 	zombie = newZombie(names[r]);
 	return (zombie);

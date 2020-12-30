@@ -5,9 +5,8 @@ ScavTrap::ScavTrap()
 	std::cout << "Knock Knock, mini-trap is here!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : _name(name)
 {
-	this->_name = name;
 	this->_hitp = 100;
 	this->_mhitp = 100;
 	this->_energyp = 50;
@@ -22,6 +21,58 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::~ScavTrap()
 {
 	std::cout << this->_name <<  ": I'll die the way I lived: annoying!" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const & src)
+{
+	*this = src;
+}
+
+ScavTrap&		ScavTrap::operator=(ScavTrap const & src)
+{
+	this->_hitp = src.getHitP();
+	this->_mhitp = src.getMaxHitP();
+	this->_energyp = src.getEnergy();
+	this->_menergyp = src.getMaxEnergy();
+	this->_level = src.getLevel();
+	this->_name = src.getName();
+	this->_melee_attack_dmg = src.getMeleeDmg();
+	this->_range_attack_dmg = src.getRangeDmg();
+	this->_armor_reduction = src.getArmorDmg();
+	return *this;
+}
+
+unsigned int		ScavTrap::getHitP() const
+{
+	return _hitp;
+}
+unsigned int		ScavTrap::getMaxHitP() const
+{
+	return _mhitp;
+}
+unsigned int		ScavTrap::getEnergy() const
+{
+	return _energyp;
+}
+unsigned int		ScavTrap::getMaxEnergy() const
+{
+	return _menergyp;
+}
+unsigned int		ScavTrap::getLevel() const
+{
+	return _level;
+}
+unsigned int		ScavTrap::getMeleeDmg() const
+{
+	return _melee_attack_dmg;
+}
+unsigned int		ScavTrap::getRangeDmg() const
+{
+	return _range_attack_dmg;
+}
+unsigned int		ScavTrap::getArmorDmg() const
+{
+	return _armor_reduction;
 }
 
 unsigned int	ScavTrap::rangedAttack(std::string const & target)

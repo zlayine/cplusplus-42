@@ -2,22 +2,21 @@
 
 ZombieHorde::ZombieHorde(int n)
 {
+
 	this->_zombies = new Zombie[n];
 	this->_n = n;
 }
 
 ZombieHorde::~ZombieHorde()
 {
+	delete[] _zombies;
+	std::cout << "Zombies Released" << std::endl;
 }
 
 void	ZombieHorde::announce(void)
 {
-	int i;
-
-	i = 0;
-	while (i < this->_n)
+	for (int i = 0 ; i < _n; i++)
 	{
 		_zombies[i].announce();
-		i++;
 	}
 }

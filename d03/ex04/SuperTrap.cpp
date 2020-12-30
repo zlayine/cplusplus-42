@@ -2,12 +2,11 @@
 
 SuperTrap::SuperTrap()
 {
-	// std::cout << "Have no fear, mini-trap is here!" << std::endl;
+	std::cout << "Have no fear, mini-trap is here!" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name) : FragTrap(name) , NinjaTrap(name)
+SuperTrap::SuperTrap(std::string name) : FragTrap(name) , NinjaTrap()
 {
-	this->FragTrap::_name = name;
 	this->FragTrap::_hitp = FragTrap::_hitp;
 	this->FragTrap::_mhitp = FragTrap::_mhitp;
 	this->FragTrap::_energyp = NinjaTrap::_energyp;

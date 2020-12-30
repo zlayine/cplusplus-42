@@ -26,6 +26,73 @@ FragTrap::~FragTrap()
 	std::cout << this->_name <<  ": I'm too pretty to die!" << std::endl;
 }
 
+FragTrap::FragTrap(FragTrap const & src)
+{
+	*this = src;
+}
+
+FragTrap&		FragTrap::operator=(FragTrap const & src)
+{
+	this->_hitp = src.getHitP();
+	this->_mhitp = src.getMaxHitP();
+	this->_energyp = src.getEnergy();
+	this->_menergyp = src.getMaxEnergy();
+	this->_level = src.getLevel();
+	this->_name = src.getName();
+	this->_melee_attack_dmg = src.getMeleeDmg();
+	this->_range_attack_dmg = src.getRangeDmg();
+	this->_kick_attack_dmg = src.getKickDmg();
+	this->_lookaw_attack_dmg = src.getLookDmg();
+	this->_gas_attack_dmg = src.getGasDmg();
+	this->_armor_reduction = src.getArmorDmg();
+	return *this;
+}
+
+unsigned int		FragTrap::getHitP() const
+{
+	return _hitp;
+}
+unsigned int		FragTrap::getMaxHitP() const
+{
+	return _mhitp;
+}
+unsigned int		FragTrap::getEnergy() const
+{
+	return _energyp;
+}
+unsigned int		FragTrap::getMaxEnergy() const
+{
+	return _menergyp;
+}
+unsigned int		FragTrap::getLevel() const
+{
+	return _level;
+}
+unsigned int		FragTrap::getMeleeDmg() const
+{
+	return _melee_attack_dmg;
+}
+unsigned int		FragTrap::getRangeDmg() const
+{
+	return _range_attack_dmg;
+}
+unsigned int		FragTrap::getKickDmg() const
+{
+	return _kick_attack_dmg;
+}
+unsigned int		FragTrap::getLookDmg() const
+{
+	return _lookaw_attack_dmg;
+}
+unsigned int		FragTrap::getGasDmg() const
+{
+	return _gas_attack_dmg;
+}
+unsigned int		FragTrap::getArmorDmg() const
+{
+	return _armor_reduction;
+}
+
 unsigned int	FragTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "FR4G-TP "

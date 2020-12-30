@@ -5,9 +5,8 @@ FragTrap::FragTrap()
 	std::cout << "Have no fear, mini-trap is here!" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap()
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name;
 	this->_hitp = 100;
 	this->_mhitp = 100;
 	this->_energyp = 100;
@@ -25,6 +24,35 @@ FragTrap::FragTrap(std::string name) : ClapTrap()
 FragTrap::~FragTrap()
 {
 	std::cout << this->_name <<  ": I'm too pretty to die!" << std::endl;
+}
+
+FragTrap&		FragTrap::operator=(FragTrap const & src)
+{
+	this->_hitp = src.getHitP();
+	this->_mhitp = src.getMaxHitP();
+	this->_energyp = src.getEnergy();
+	this->_menergyp = src.getMaxEnergy();
+	this->_level = src.getLevel();
+	this->_name = src.getName();
+	this->_melee_attack_dmg = src.getMeleeDmg();
+	this->_range_attack_dmg = src.getRangeDmg();
+	this->_kick_attack_dmg = src.getKickDmg();
+	this->_lookaw_attack_dmg = src.getLookDmg();
+	this->_gas_attack_dmg = src.getGasDmg();
+	this->_armor_reduction = src.getArmorDmg();
+	return *this;
+}
+unsigned int		FragTrap::getKickDmg() const
+{
+	return _kick_attack_dmg;
+}
+unsigned int		FragTrap::getLookDmg() const
+{
+	return _lookaw_attack_dmg;
+}
+unsigned int		FragTrap::getGasDmg() const
+{
+	return _gas_attack_dmg;
 }
 
 unsigned int	FragTrap::rangedAttack(std::string const & target)

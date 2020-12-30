@@ -17,6 +17,7 @@ private:
 
 public:
 	FragTrap();
+	FragTrap(FragTrap const & src);
     FragTrap(std::string name);
     ~FragTrap();
 
@@ -24,6 +25,9 @@ public:
 	unsigned int		meleeAttack(std::string const & target);
 	unsigned int		vaulthunter_dot_exe(std::string const & target);
 
+	unsigned int		getKickDmg() const;
+	unsigned int		getLookDmg() const;
+	unsigned int		getGasDmg() const;
 };
 
 typedef unsigned int 	(FragTrap::*FragPTR) (std::string const &);
