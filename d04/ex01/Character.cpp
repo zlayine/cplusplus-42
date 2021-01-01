@@ -23,7 +23,6 @@ Character::~Character()
 {
 }
 
-
 void	Character::recoverAP()
 {
 	if (this->_ap < 40)

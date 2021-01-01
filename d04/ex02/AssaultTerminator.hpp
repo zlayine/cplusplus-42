@@ -14,6 +14,7 @@ public:
 	AssaultTerminator(AssaultTerminator const &);
 	~AssaultTerminator();
 
+    AssaultTerminator &    	operator=(AssaultTerminator const & rhs);
 	virtual ISpaceMarine*	clone() const;
 	virtual void			battleCry() const;
 	virtual void			rangedAttack() const;
