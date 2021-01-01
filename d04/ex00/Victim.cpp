@@ -10,6 +10,19 @@ Victim::~Victim()
 	std::cout << "Victim " << this->_name << " just died for no apparent reason!" << std::endl;
 }
 
+Victim::Victim(Victim const & src)
+{
+	*this = src;
+}
+
+Victim & Victim::operator=(Victim const & rhs)
+{
+    std::cout << "Assignation operator called" << std::endl;
+
+    this->_name = rhs.getName();
+    return *this;
+}
+
 std::string		Victim::getName() const {
 	return this->_name;
 }
