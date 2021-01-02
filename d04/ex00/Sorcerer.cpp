@@ -10,6 +10,16 @@ Sorcerer::~Sorcerer()
 	std::cout << this->_name << ", " << this->_title << ", is dead. Consequences will never be the same!" << std::endl;
 }
 
+Sorcerer::Sorcerer(Sorcerer const &src)
+{
+	*this = src;
+}
+
+Sorcerer &	Sorcerer::operator=(Sorcerer const & rhs)
+{
+	_name = rhs.getName();
+	_title = rhs.getTitle();
+}
 
 std::string	Sorcerer::getName() const {
 	return this->_name;

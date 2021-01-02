@@ -12,9 +12,12 @@ private:
 	AWeapon			*_weapon;
 
 public:
+	Character();
+	Character(Character const &src);
 	Character(std::string const & name);
 	~Character();
 
+    Character &    operator=(Character const & rhs);
 	void recoverAP();
 	void equip(AWeapon*);
 	void attack(Enemy*);

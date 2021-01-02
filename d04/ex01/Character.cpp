@@ -1,10 +1,26 @@
 #include "Character.hpp"
 
-
 Character::Character(std::string const & name) : _name(name)
 {
 	this->_ap = 40;
 	this->_weapon = NULL;
+}
+
+Character::Character(Character const & src)
+{
+	*this = src;
+}
+
+Character	&Character::operator=(Character const & rhs)
+{
+	this->_name = rhs.getName();
+	this->_weapon = rhs.getWeapon();
+	this->_ap = rhs.getAP();
+	return *this;
+}
+
+Character::~Character()
+{
 }
 
 void	Character::recoverAP()

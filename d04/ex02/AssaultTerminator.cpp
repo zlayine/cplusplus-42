@@ -15,6 +15,8 @@ AssaultTerminator::~AssaultTerminator()
 	std::cout << "I'll be back" << std::endl;
 }
 
+
+
 ISpaceMarine	*AssaultTerminator::clone() const
 {
 	AssaultTerminator	*t = new AssaultTerminator(*this);
