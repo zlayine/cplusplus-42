@@ -6,11 +6,14 @@
 class MateriaSource : public IMateriaSource
 {
 private:
-	AMateria	*_matrias[4];
+	AMateria	*_materias[4];
 	int			_current;
 public:
 	MateriaSource();
+	MateriaSource(MateriaSource const &src);
 	~MateriaSource();
+
+	MateriaSource&	operator=(MateriaSource const &rhs);
 	void learnMateria(AMateria*);
 	AMateria* createMateria(std::string const & type);
 };

@@ -4,17 +4,33 @@ Character::Character()
 {
 }
 
+Character::Character(Character const &src)
+{
+	*this = src;
+}
+
 Character::Character(std::string name) : _name(name)
 {
 	_total = 0;
-	_materias[0] = NULL;
-	_materias[1] = NULL;
-	_materias[2] = NULL;
-	_materias[3] = NULL;
+	for (int i = 0; i < 4; i++)
+		_materias[i] = NULL;
 }
 
 Character::~Character()
 {
+}
+
+Character&	Character::operator=(Character const &rhs)
+{
+	this->_name = rhs.getName();
+	for (int i = 0; i < _total; i++)
+		delete _materias[i];
+	this->_total = 0;
+	for (int i = 0; i < rhs._total; i++)
+		this->equip(rhs._materias[i]->clone());
+	for (int i = rhs._total; i < 4; i++)
+		_materias[i] = NULL;
+	return *this;
 }
 
 std::string	const & Character::getName() const
@@ -42,6 +58,7 @@ void		Character::unequip(int idx)
 {
 	if (idx < 4 && idx >= 0 && _materias[idx])
 	{
+		delete _materias[idx];
 		_materias[idx] = NULL;
 		_total--;
 	}

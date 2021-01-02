@@ -8,9 +8,16 @@ Ice::~Ice()
 {
 }
 
-Ice::Ice(Ice const & cpy)
+Ice::Ice(Ice const &cpy)
 {
 	*this = cpy;
+}
+
+Ice&	Ice::operator=(Ice const &rhs)
+{
+	this->_xp = rhs.getXP();
+	this->_type = rhs.getType();
+	return *this;
 }
 
 AMateria*	Ice::clone() const
