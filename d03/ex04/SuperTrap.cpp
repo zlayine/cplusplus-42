@@ -5,7 +5,7 @@ SuperTrap::SuperTrap()
 	std::cout << "Have no fear, mini-trap is here!" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name) : FragTrap(name) , NinjaTrap()
+SuperTrap::SuperTrap(std::string name) : FragTrap(name) , NinjaTrap(name)
 {
 	this->FragTrap::_hitp = FragTrap::_hitp;
 	this->FragTrap::_mhitp = FragTrap::_mhitp;

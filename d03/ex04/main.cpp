@@ -8,6 +8,7 @@ int main()
 	NinjaTrap	n1("ninbot");
 	SuperTrap	super("superbot");
 
+	// std::cout << super.get
 	// f1.takeDamage(n1.meleeAttack(f1.getName()));
 
 	// n1.takeDamage(super.vaulthunter_dot_exe(n1.getName()));
