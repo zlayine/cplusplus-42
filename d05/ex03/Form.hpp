@@ -6,16 +6,18 @@ class Form;
 
 class Form
 {
-private:
-	std::string const	_name;
+protected:
+	std::string 		_name;
 	int					_signGrade;
 	int					_execGrade;
 	bool				_signed;
 public:
 	Form();
+	Form(Form const &src);
 	Form(std::string const name, int signGrade, int execGrade);
 	~Form();
 
+	Form&			operator=(Form const &rhs);
 	std::string		getName() const;
 	int				getSignGrade() const;
 	int				getExecGrade() const;

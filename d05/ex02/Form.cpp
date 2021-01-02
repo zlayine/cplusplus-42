@@ -4,6 +4,11 @@ Form::Form()
 {
 }
 
+Form::Form(Form const &src)
+{
+	*this = src;
+}
+
 Form::Form(std::string const name, int signGrade, int execGrade) : _name(name), _signGrade(signGrade), _execGrade(execGrade), _signed(false)
 {
 	if (signGrade < 1 || execGrade < 1)
@@ -14,6 +19,15 @@ Form::Form(std::string const name, int signGrade, int execGrade) : _name(name), 
 
 Form::~Form()
 {
+}
+
+Form&		Form::operator=(Form const &rhs)
+{
+	_name = rhs.getName();
+	_signed = rhs.isSigned();
+	_signGrade = rhs.getSignGrade();
+	_execGrade = rhs.getExecGrade();
+	return *this;
 }
 
 std::string		Form::getName() const

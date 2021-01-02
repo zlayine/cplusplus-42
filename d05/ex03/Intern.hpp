@@ -7,36 +7,48 @@
 
 class Intern
 {
-private:
 public:
 	Intern();
+	Intern(Intern const &src);
 	~Intern();
 
-	Form	*makeForm(std::string const & type, std::string const & target);
+	Intern&		operator=(Intern const &rhs);
+	Form		*makeForm(std::string const & type, std::string const & target);
 };
 
-
-// typedef Form* (Form::*PTRS) (std::string const &);
+typedef Form	*(Form::*PTR) (std::string const &target);
 
 Intern::Intern()
 {
+	
+}
+
+Intern::Intern(Intern const &src)
+{
+	*this = src;
 }
 
 Intern::~Intern()
 {
 }
 
+Intern&			Intern::operator=(Intern const &rhs)
+{
+
+}
+
+
 Form	*Intern::makeForm(std::string const & type, std::string const & target)
 {
 	std::string names[] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 
-	// PTRS		ptrs[3] = { new PresidentialPardonForm, new RobotomyRequestForm, new ShrubberyCreationForm};
+	PTR 	ptrs[3] = {ShrubberyCreationForm::generate, &ShrubberyCreationForm::generate, &ShrubberyCreationForm::generate};
 
     // for(int i = 0; i < 3; i++)
     // {
-    //     if (names[i].compare(type) == 0)
+    //     if (forms[i]->getName().compare(type) == 0)
     //     {  
-    //     	(*ptrs[i])(target);
+	// 		forms[i]->
     //         break ;
     //     }
     // }

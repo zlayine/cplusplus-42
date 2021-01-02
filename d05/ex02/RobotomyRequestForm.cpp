@@ -4,9 +4,22 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("Robo
 {
 }
 
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src)
+{
+	*this = src;
+}
+
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
+
+RobotomyRequestForm&		RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
+{
+	_target = rhs._target;
+	_signed = rhs.isSigned();
+	return *this;
+}
+
 
 void		RobotomyRequestForm::execute(Bureaucrat const &exec) const
 {

@@ -58,8 +58,20 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form("
 {
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src)
+{
+	*this = src;
+}
+
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+}
+
+ShrubberyCreationForm&		ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
+{
+	_target = rhs._target;
+	_signed = rhs.isSigned();
+	return *this;
 }
 
 void		ShrubberyCreationForm::execute(Bureaucrat const &exec) const

@@ -54,12 +54,24 @@ std::string	const ShrubberyCreationForm::_trees[3] = {
 		"        ###"
 		"        ###"};
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form("ShrubberyCreationForm", 72, 45) , _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : Form("shrubbery creation", 72, 45) , _target(target)
 {
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src)
+{
+	*this = src;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+}
+
+ShrubberyCreationForm&		ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
+{
+	_target = rhs._target;
+	_signed = rhs.isSigned();
+	return *this;
 }
 
 void		ShrubberyCreationForm::execute(Bureaucrat const &exec) const
@@ -79,3 +91,9 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &exec) const
 		ofs.clear();
 	}
 }
+
+Form	*ShrubberyCreationForm::generate(std::string const &target)
+{
+	return new ShrubberyCreationForm(target);
+}
+

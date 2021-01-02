@@ -41,22 +41,3 @@ unsigned int	SuperTrap::meleeAttack(std::string const & target)
 		<< std::endl;
 	return this->FragTrap::_melee_attack_dmg;
 }
-
-// unsigned int	SuperTrap::vaulthunter_dot_exe(std::string const & target)
-// {
-// 	FragPTR	ptrs[5] = { &SuperTrap::meleeAttack, 
-// 		&SuperTrap::rangedAttack,
-// 		&SuperTrap::_kickAttack,
-// 		&SuperTrap::_lookAwayAttack,
-// 		&SuperTrap::_gasAttack};
-// 	int		r;
-
-// 	if (this->_energyp >= 25)
-// 	{
-// 		this->_energyp -= 25;
-// 		r = rand() % 5;
-// 		return (this->*ptrs[r])(target);
-// 	}
-// 	std::cout << this->_name << ": Dangit, I'm out of energy!" << std::endl;
-// 	return 0;
-// }

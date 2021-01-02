@@ -1,12 +1,26 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("RobotomyRequestForm", 72, 45) , _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string const &target) : Form("roboto request", 72, 45) , _target(target)
 {
 }
+
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src)
+{
+	*this = src;
+}
+
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
+
+RobotomyRequestForm&		RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
+{
+	_target = rhs._target;
+	_signed = rhs.isSigned();
+	return *this;
+}
+
 
 void		RobotomyRequestForm::execute(Bureaucrat const &exec) const
 {

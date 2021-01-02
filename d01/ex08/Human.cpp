@@ -1,7 +1,5 @@
 #include "Human.hpp"
 
-typedef  void (Human::*HumanFunc)(std::string const & target);
-
 void	Human::meleeAttack(std::string const & target)
 {
 	std::cout << "Melee Attacking " << target << std::endl;
