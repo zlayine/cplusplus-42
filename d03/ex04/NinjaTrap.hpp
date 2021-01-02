@@ -13,6 +13,7 @@ public:
     NinjaTrap(std::string name);
     ~NinjaTrap();
 
+	NinjaTrap & 		operator=(NinjaTrap const & src);
 	unsigned int		rangedAttack(std::string const & target);
 	unsigned int		meleeAttack(std::string const & target);
 	void				ninjaShoebox(FragTrap const & target);
