@@ -1,10 +1,5 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
-{
-	std::cout << "Have no fear, mini-trap is here!" << std::endl;
-}
-
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->_hitp = 100;

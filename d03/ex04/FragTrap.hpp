@@ -3,7 +3,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 
 private:
@@ -21,6 +21,8 @@ public:
     FragTrap(std::string name);
     ~FragTrap();
 
+	FragTrap & 			operator=(FragTrap const & src);
+	
 	unsigned int		rangedAttack(std::string const & target);
 	unsigned int		meleeAttack(std::string const & target);
 	unsigned int		vaulthunter_dot_exe(std::string const & target);

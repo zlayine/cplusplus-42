@@ -1,21 +1,15 @@
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap()
+SuperTrap::SuperTrap(std::string name) : ClapTrap(name), FragTrap(name) , NinjaTrap(name)
 {
-	std::cout << "Have no fear, mini-trap is here!" << std::endl;
-}
-
-SuperTrap::SuperTrap(std::string name) : FragTrap(name) , NinjaTrap(name)
-{
-	this->FragTrap::_hitp = FragTrap::_hitp;
-	this->FragTrap::_mhitp = FragTrap::_mhitp;
-	this->FragTrap::_energyp = NinjaTrap::_energyp;
-	this->FragTrap::_menergyp = NinjaTrap::_menergyp;
-	this->FragTrap::_level = 1;
-	this->FragTrap::_melee_attack_dmg = NinjaTrap::_melee_attack_dmg;
-	this->FragTrap::_range_attack_dmg = FragTrap::_range_attack_dmg;
-	this->FragTrap::_armor_reduction = FragTrap::_armor_reduction;
-	std::cout << this->FragTrap::_energyp << std::endl;
+	this->_hitp = this->FragTrap::_hitp;
+	this->_mhitp = FragTrap::_mhitp;
+	this->_energyp = NinjaTrap::_energyp;
+	this->_menergyp = NinjaTrap::_menergyp;
+	this->_level = 1;
+	this->_melee_attack_dmg = NinjaTrap::_melee_attack_dmg;
+	this->_range_attack_dmg = FragTrap::_range_attack_dmg;
+	this->_armor_reduction = FragTrap::_armor_reduction;
 	std::cout << "Have no fear, " << name << " is here!" << std::endl;
 }
 

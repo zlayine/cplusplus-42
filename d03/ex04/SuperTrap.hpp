@@ -1,10 +1,11 @@
 #ifndef SUPERTRAP_H
 # define SUPERTRAP_H
 
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 
-class SuperTrap : virtual public FragTrap, virtual public NinjaTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
 
 public:

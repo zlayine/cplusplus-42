@@ -1,10 +1,5 @@
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap()
-{
-	std::cout << "Hey, watch out!, mini-trap is here!" << std::endl;
-}
-
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 {
 	this->_hitp = 60;

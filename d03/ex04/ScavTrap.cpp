@@ -1,10 +1,5 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
-{
-	std::cout << "Knock Knock, mini-trap is here!" << std::endl;
-}
-
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_hitp = 100;
