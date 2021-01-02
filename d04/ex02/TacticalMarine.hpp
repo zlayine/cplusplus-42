@@ -11,7 +11,7 @@ private:
 	
 public:
 	TacticalMarine();
-	TacticalMarine(TacticalMarine const &);
+	TacticalMarine(TacticalMarine const &src);
 	~TacticalMarine();
 
     TacticalMarine &    	operator=(TacticalMarine const & rhs);

@@ -15,6 +15,11 @@ TacticalMarine::~TacticalMarine()
 	std::cout << "Aaargh..." << std::endl;
 }
 
+TacticalMarine&	TacticalMarine::operator=(TacticalMarine const &rhs)
+{
+	return *this;
+}
+
 ISpaceMarine	*TacticalMarine::clone() const
 {
 	TacticalMarine	*t = new TacticalMarine(*this);

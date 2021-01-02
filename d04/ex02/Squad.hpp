@@ -15,10 +15,10 @@ private:
 	void			expand();
 public:
 	Squad();
-	Squad(Squad const &);
+	Squad(Squad const &src);
 	~Squad();
 
-    Squad &    operator=(Squad const &);
+    Squad &    operator=(Squad const &rhs);
 
 	int				getCount() const;
 	ISpaceMarine* 	getUnit(int) const;
