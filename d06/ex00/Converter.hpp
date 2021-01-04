@@ -8,19 +8,30 @@
 class Converter
 {
 private:
-	std::string	const	_str;
-	int					type;
-	double				val;
+	double				_val;
+	int					_precision;
+	int					_error;
+	int					_sign;
 
 public:
-	Converter(std::string const & str);
+	Converter(std::string);
 	Converter();
 	~Converter();
 
-	char		getChar() const;
-	int			getInt() const;
-	float		getFloat() const;
-	double		getDouble() const;
+	void		getChar() const;
+	void		getInt() const;
+	void		getFloat() const;
+	void		getDouble() const;
+
+	class ImpossibleConvertException : public std::exception
+	{
+		virtual const char * what () const throw();
+	};
+
+	class NonDisplayableException : public std::exception
+	{
+		virtual const char * what () const throw();
+	};
 };
 
 #endif
