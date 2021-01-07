@@ -53,8 +53,6 @@ Converter::Converter(std::string str)
 	p--;
 	_precision = p;
 	_val = std::atof(str.c_str());
-	// check limits
-
 }
 
 Converter::~Converter()
@@ -108,12 +106,14 @@ void		Converter::getFloat() const
 
 	std::cout << "float: ";
 	try {
-		if (_error == 2 || _val > std::numeric_limits<int>::max()
-		|| _val < std::numeric_limits<int>::min())
-			throw Converter::ImpossibleConvertException();
 		f = static_cast<float>(_val);
+		if (_sign)
+			ss << "-";
 		ss << f;
-		if (_precision < 1 && ss.str().find('.') == std::string::npos)
+		if (_error == 2 || ((_val > std::numeric_limits<int>::max()
+		|| _val < std::numeric_limits<int>::min()) && ss.str() != "nan" && ss.str().find("inf") == std::string::npos))
+			throw Converter::ImpossibleConvertException();
+		if (_precision < 1 && ss.str().find('.') == std::string::npos && ss.str() != "nan" && ss.str().find("inf") == std::string::npos)
 			ss << ".0";
 		std::cout << ss.str() << "f" << std::endl;
 		ss.clear();
@@ -132,12 +132,14 @@ void		Converter::getDouble() const
 	std::cout << "double: ";
 	try
 	{
-		if (_error == 2 || _val > std::numeric_limits<int>::max()
-		|| _val < std::numeric_limits<int>::min())
-			throw Converter::ImpossibleConvertException();
 		d = static_cast<double>(_val);
+		if (_sign)
+			ss << "-";
 		ss << d;
-		if (_precision < 1 && ss.str().find('.') == std::string::npos)
+		if (_error == 2 || ((_val > std::numeric_limits<int>::max()
+		|| _val < std::numeric_limits<int>::min()) && ss.str() != "nan" && ss.str().find("inf") == std::string::npos))
+			throw Converter::ImpossibleConvertException();
+		if (_precision < 1 && ss.str().find('.') == std::string::npos && ss.str() != "nan" && ss.str().find("inf") == std::string::npos)
 			ss << ".0";
 		std::cout << ss.str() << std::endl;
 		ss.clear();
