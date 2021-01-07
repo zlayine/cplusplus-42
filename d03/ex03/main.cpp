@@ -2,8 +2,6 @@
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
 
-// output must be checked again
-// coplien must be tested
 int main()
 {
 	FragTrap	f1("robot");

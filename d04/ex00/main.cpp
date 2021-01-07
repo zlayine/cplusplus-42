@@ -1,7 +1,6 @@
 #include "Sorcerer.hpp"
 #include "Peon.hpp"
 
-//coplien form not added
 int main()
 {
 	Sorcerer robert("Robert", "the Magnificent");

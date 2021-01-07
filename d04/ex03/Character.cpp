@@ -4,11 +4,6 @@ Character::Character()
 {
 }
 
-Character::Character(Character const &src)
-{
-	*this = src;
-}
-
 Character::Character(std::string name) : _name(name)
 {
 	_total = 0;
@@ -16,8 +11,16 @@ Character::Character(std::string name) : _name(name)
 		_materias[i] = NULL;
 }
 
+Character::Character(Character const &src) : Character(src.getName())
+{
+	for (int i = 0; i < src._total; i++)
+		this->equip(src._materias[i]->clone());
+}
+
 Character::~Character()
 {
+	for (int i = 0; i < _total; i++)
+		delete _materias[i];
 }
 
 Character&	Character::operator=(Character const &rhs)

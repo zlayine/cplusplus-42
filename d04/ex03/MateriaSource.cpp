@@ -7,18 +7,20 @@ MateriaSource::MateriaSource()
 		_materias[i] = NULL;
 }
 
-MateriaSource::MateriaSource(MateriaSource const &src)
+MateriaSource::MateriaSource(MateriaSource const &src) : MateriaSource()
 {
-	*this = src;
+	for (int i = 0; i < src._current; i++)
+		this->learnMateria(src._materias[i]->clone());
 }
 
 MateriaSource::~MateriaSource()
 {
+	for (int i = 0; i < _current; i++)
+		delete _materias[i];
 }
 
 MateriaSource&	MateriaSource::operator=(MateriaSource const &rhs)
 {
-	this->_current = 0;
 	for (int i = 0; i < rhs._current; i++)
 		delete _materias[i];
 	this->_current = 0;
