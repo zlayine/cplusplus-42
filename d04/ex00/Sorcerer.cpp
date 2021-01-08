@@ -20,6 +20,7 @@ Sorcerer &	Sorcerer::operator=(Sorcerer const & rhs)
 {
 	_name = rhs.getName();
 	_title = rhs.getTitle();
+	return *this;
 }
 
 std::string	Sorcerer::getName() const {

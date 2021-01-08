@@ -73,5 +73,6 @@ std::ostream &  operator<<(std::ostream & o, Character const & src)
 		o << " AP and wields a " << src.getWeapon()->getName();
 	else
 		o << " AP and is unarmed";
+	o << std::endl;
 	return o;
 }

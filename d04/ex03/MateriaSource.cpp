@@ -7,8 +7,11 @@ MateriaSource::MateriaSource()
 		_materias[i] = NULL;
 }
 
-MateriaSource::MateriaSource(MateriaSource const &src) : MateriaSource()
+MateriaSource::MateriaSource(MateriaSource const &src)
 {
+	_current = 0;
+	for (int i = 0; i < 4; i++)
+		_materias[i] = NULL;
 	for (int i = 0; i < src._current; i++)
 		this->learnMateria(src._materias[i]->clone());
 }

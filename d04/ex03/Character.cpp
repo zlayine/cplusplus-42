@@ -11,8 +11,11 @@ Character::Character(std::string name) : _name(name)
 		_materias[i] = NULL;
 }
 
-Character::Character(Character const &src) : Character(src.getName())
+Character::Character(Character const &src) : _name(src.getName())
 {
+	_total = 0;
+	for (int i = 0; i < 4; i++)
+		_materias[i] = NULL;
 	for (int i = 0; i < src._total; i++)
 		this->equip(src._materias[i]->clone());
 }
