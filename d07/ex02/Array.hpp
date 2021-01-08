@@ -13,7 +13,7 @@ private:
 public:
 	Array()
 	{
-		array = new T;
+		array = NULL;
 		len = 0;
 	}
 
@@ -21,13 +21,9 @@ public:
 	{
 		array = new T[n];
 		len = n;
-		for(int i = 0; i < n; i++)
-		{
-			array[i] = 0;
-		}
 	}
 
-	Array(Array const &src)
+	Array(Array<T> const &src)
 	{
 		array = new T[src.size()];
 		len = src.size();
@@ -44,7 +40,8 @@ public:
 
 	Array&	operator=(Array const &rhs)
 	{
-		delete[] array;
+		if (len)
+			delete[] array;
 		array = new T[rhs.size()];
 		len = rhs.size();
 		for(int i = 0; i < len; i++)
@@ -56,25 +53,13 @@ public:
 
 	T&	operator[](int i)
 	{
-		std::cout << "iter called " << i << std::endl;
 		if (i >= len)
 		{
 			std::cout << "Index out of bounds" << std::endl; 
 			//exception to throw
 		}
-		std::cout << "iter called " << i << std::endl;
 		return array[i];
 	}
-
-	void* operator new(std::size_t s)
-    {
-        return ::operator new(s);
-    }
-
-	void* operator new[](std::size_t s)
-    {
-        return ::operator new(s);
-    }
 
 	int	size() const
 	{
@@ -82,11 +67,11 @@ public:
 	}
 };
 
-template< typename T >
-std::ostream&	operator<<(std::ostream& o,T const & a)
-{
-	o << a;
-	return (o);
-}
+// template< typename T >
+// std::ostream&	operator<<(std::ostream& o,T const & a)
+// {
+// 	o << a;
+// 	return (o);
+// }
 
 #endif
