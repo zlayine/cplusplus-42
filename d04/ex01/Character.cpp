@@ -25,8 +25,9 @@ Character::~Character()
 
 void	Character::recoverAP()
 {
-	if (this->_ap < 40)
-		this->_ap += 10;
+	this->_ap += 10;
+	if (this->_ap >= 40)
+		this->_ap = 40;
 }
 
 void	Character::equip(AWeapon *wp)
@@ -36,8 +37,10 @@ void	Character::equip(AWeapon *wp)
 
 void	Character::attack(Enemy *enemy)
 {
-	if (this->_ap !=  0 && this->_weapon)
+	if (this->_ap != 0 && this->_weapon && enemy)
 	{
+		if (this->_ap < this->_weapon->getAPCost())
+			return ;
 		std::cout << this->_name << " attacks " << enemy->getType()
 			<< " with a " << this->_weapon->getName() << std::endl;
 		this->_weapon->attack();

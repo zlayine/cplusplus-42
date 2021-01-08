@@ -13,6 +13,7 @@ Sorcerer::~Sorcerer()
 Sorcerer::Sorcerer(Sorcerer const &src)
 {
 	*this = src;
+	std::cout << this->_name << ", " << this->_title << ", is born!" << std::endl;
 }
 
 Sorcerer &	Sorcerer::operator=(Sorcerer const & rhs)

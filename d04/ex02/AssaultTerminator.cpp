@@ -8,11 +8,12 @@ AssaultTerminator::AssaultTerminator()
 AssaultTerminator::AssaultTerminator(AssaultTerminator const & cpy)
 {
 	*this = cpy;
+	std::cout << "* teleports from space *" << std::endl;
 }
 
 AssaultTerminator::~AssaultTerminator()
 {
-	std::cout << "I'll be back" << std::endl;
+	std::cout << "I'll be back..." << std::endl;
 }
 
 AssaultTerminator&	AssaultTerminator::operator=(AssaultTerminator const &rhs)

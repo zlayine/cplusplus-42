@@ -5,6 +5,11 @@ Peon::Peon(std::string name) : Victim(name)
 	std::cout << "Zog zog." << std::endl;
 }
 
+Peon::Peon(Peon const &src) : Victim(src._name)
+{
+	std::cout << "Zog zog." << std::endl;
+}
+
 Peon::~Peon()
 {
 	std::cout << "Bleuark..." << std::endl;

@@ -33,3 +33,11 @@ int				Enemy::getHP() const
 {
 	return this->_hp;
 }
+
+void		Enemy::takeDamage(int dmg)
+{
+	if (dmg > 0)
+		this->_hp -= dmg;
+	if (this->_hp < 0)
+		this->_hp = 0;
+}

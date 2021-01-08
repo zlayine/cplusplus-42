@@ -13,12 +13,11 @@ Victim::~Victim()
 Victim::Victim(Victim const & src)
 {
 	*this = src;
+	std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;
 }
 
 Victim & Victim::operator=(Victim const & rhs)
 {
-    std::cout << "Assignation operator called" << std::endl;
-
     this->_name = rhs.getName();
     return *this;
 }
