@@ -12,7 +12,7 @@ FragTrap::FragTrap(std::string name) : _name(name)
 	this->_energyp = 100;
 	this->_menergyp = 100;
 	this->_level = 1;
-	this->_melee_attack_dmg = 30;
+	this->_melee_attack_dmg = 20;
 	this->_range_attack_dmg = 30;
 	this->_kick_attack_dmg = 15;
 	this->_lookaw_attack_dmg = 2;
@@ -181,6 +181,7 @@ unsigned int	FragTrap::vaulthunter_dot_exe(std::string const & target)
 		&FragTrap::_gasAttack};
 	int		r;
 
+	srand(clock());
 	if (this->_energyp >= 25)
 	{
 		this->_energyp -= 25;

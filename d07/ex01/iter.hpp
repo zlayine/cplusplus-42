@@ -1,6 +1,8 @@
 #ifndef ITER_H
 # define ITER_H
 
+#include <iostream>
+
 template< typename T, typename U>
 void		iter(T const *array, T const & len, U const & fun)
 {
