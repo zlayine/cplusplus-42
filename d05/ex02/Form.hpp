@@ -16,7 +16,7 @@ public:
 	Form();
 	Form(Form const &src);
 	Form(std::string const name, int signGrade, int execGrade);
-	~Form();
+	virtual ~Form();
 
 	Form&			operator=(Form const &rhs);
 	std::string		getName() const;

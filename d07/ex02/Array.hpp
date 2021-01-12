@@ -67,11 +67,5 @@ public:
 	}
 };
 
-// template< typename T >
-// std::ostream&	operator<<(std::ostream& o,T const & a)
-// {
-// 	o << a;
-// 	return (o);
-// }
 
 #endif
