@@ -43,7 +43,7 @@ Converter::Converter(std::string str)
 			if (p == 1 && str[i] != '0')
 				p++;
 		}
-		else if ((!std::isdigit(str[i]) && str[i] != 'f') || (str[i] == 'f' && !p))
+		else if ((!std::isdigit(str[i]) && str[i] != 'f' && str[i] != 'e') || ((str[i] == 'f' || str[i] == 'e')&& !p))
 		{
 			_error = 2;
 			break ;

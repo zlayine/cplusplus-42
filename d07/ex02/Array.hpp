@@ -54,10 +54,7 @@ public:
 	T&	operator[](int i)
 	{
 		if (i >= len)
-		{
-			std::cout << "Index out of bounds" << std::endl; 
-			//exception to throw
-		}
+			throw OutOfBoundException();
 		return array[i];
 	}
 
@@ -65,6 +62,14 @@ public:
 	{
 		return (len);
 	}
+
+	class OutOfBoundException : public std::exception
+	{
+		virtual const char * what () const throw()
+		{
+			return "Index out of bounds"; 
+		}
+	};
 };
 
 

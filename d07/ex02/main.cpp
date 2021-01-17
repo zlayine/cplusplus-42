@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Array.hpp"
 
+//set main tests, with exceptions
 int main()
 {
 	Array<int> intR;

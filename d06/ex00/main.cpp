@@ -1,8 +1,8 @@
 #include "Converter.hpp"
 #include <iostream>
 #include <string>
-# include <cmath>
-# include <iomanip>
+
+//not added e for float (added but not ttested)
 int		main(int argc, char **argv)
 {
 	if (argc != 2)
