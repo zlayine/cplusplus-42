@@ -15,16 +15,22 @@ Span::~Span()
 	
 }
 
+const char *Span::SizeExceedLimitsException::what() const throw()
+{
+	return "Size exceed the limits exception..";
+}
+
+const char *Span::SmallSizeException::what() const throw()
+{
+	return "Small size exception..";
+}
+
 void	Span::addNumber(int nbr)
 {
 	if (_list.size() < _size)
-	{
 		_list.push_back(nbr);
-	}
 	else
-	{
-		//throw exception
-	}
+		throw Span::SizeExceedLimitsException();
 }
 
 int		Span::shortestSpan() const
@@ -35,9 +41,7 @@ int		Span::shortestSpan() const
 	std::vector<int>::const_iterator ite = _list.end();
 
 	if (_list.size() < 2)
-	{
-		// throw 
-	}
+		throw Span::SmallSizeException();
 	small = _list[0];
 	after = _list[0];
 	for(it = _list.begin(); it != ite; ++it)
@@ -58,9 +62,7 @@ int		Span::longestSpan() const
 	std::vector<int>::const_iterator ite = _list.end();
 
 	if (_list.size() < 2)
-	{
-		// throw 
-	}
+		throw Span::SmallSizeException();
 	small = _list[0];
 	after = _list[0];
 	for(it = _list.begin(); it != ite; ++it)

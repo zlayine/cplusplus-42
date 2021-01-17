@@ -17,6 +17,16 @@ public:
 	void	addNumber(int nbr);
 	int		shortestSpan() const;
 	int		longestSpan() const;
+
+	class SizeExceedLimitsException : public std::exception
+	{
+		virtual const char * what () const throw();
+	};
+
+	class SmallSizeException : public std::exception
+	{
+		virtual const char * what () const throw();
+	};
 };
 
 #endif
