@@ -16,6 +16,7 @@ private:
 public:
 	Converter(std::string);
 	Converter();
+	Converter(Converter const& src);
 	~Converter();
 
 	void		getChar() const;

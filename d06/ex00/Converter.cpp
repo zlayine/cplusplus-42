@@ -55,6 +55,14 @@ Converter::Converter(std::string str)
 	_val = std::atof(str.c_str());
 }
 
+Converter::Converter(Converter const& src)
+{
+	_val = src._val;
+	_precision = src._precision;
+	_error = src._error;
+	_sign = src._sign;
+}
+
 Converter::~Converter()
 {
 }
