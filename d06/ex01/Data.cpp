@@ -3,14 +3,15 @@
 void	*serialize()
 {
 	char *data;
+	std::string randoms("abcdefghijklmnopqrstuvwxyz0123456789");
 
 	srand(clock());
 	data = new char[20];
 	for (int i = 0; i < 8; i++)
-		data[i] = 'a' + rand() % 26;
+		data[i] = randoms[rand() % 36];
 	*reinterpret_cast<int*>(data + 8) = rand() % 1000;
 	for (int i = 0; i < 8; i++)
-		data[i + 12] = 'A' + rand() % 26;
+		data[i + 12] = randoms[rand() % 36];
 	return data;
 }
 
