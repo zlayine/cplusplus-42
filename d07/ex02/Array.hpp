@@ -53,12 +53,12 @@ public:
 
 	T&	operator[](int i)
 	{
-		if (i >= len)
+		if (i >= len || i < 0)
 			throw OutOfBoundException();
 		return array[i];
 	}
 
-	int	size() const
+	size_t	size() const
 	{
 		return (len);
 	}
@@ -67,7 +67,7 @@ public:
 	{
 		virtual const char * what () const throw()
 		{
-			return "Index out of bounds"; 
+			return "Index out of bounds exception"; 
 		}
 	};
 };

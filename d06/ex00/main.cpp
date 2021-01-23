@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 
-//not added e for float (added but not ttested)
 int		main(int argc, char **argv)
 {
 	if (argc != 2)
