@@ -5,6 +5,10 @@ Span::Span()
 
 }
 
+Span::Span(Span const &src) : _size(src._size), _list(src._list)
+{
+}
+
 Span::Span(unsigned int n)
 {
 	_size = n;
@@ -13,6 +17,13 @@ Span::Span(unsigned int n)
 Span::~Span()
 {
 	
+}
+
+Span&	Span::operator=(Span const &src)
+{
+	_list = src._list;
+	_size = src._size;
+	return *this;
 }
 
 const char *Span::SizeExceedLimitsException::what() const throw()

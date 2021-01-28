@@ -11,8 +11,11 @@ private:
 	unsigned int	_size;
 public:
 	Span();
+	Span(Span const &src);
 	Span(unsigned int n);
 	~Span();
+
+	Span&	operator=(Span const &src);
 
 	void	addNumber(int nbr);
 	int		shortestSpan() const;
