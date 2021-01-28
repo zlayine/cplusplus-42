@@ -21,6 +21,7 @@ Span::~Span()
 
 Span&	Span::operator=(Span const &src)
 {
+	_list.clear();
 	_list = src._list;
 	_size = src._size;
 	return *this;
